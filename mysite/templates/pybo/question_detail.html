@@ -1,5 +1,7 @@
-{% load static %}
-<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}" type="text/css">
+{% extends "base.html" %}
+{% block content %}
+  
+
 
 <div class="container my-3">
   <h2 class="border-bottmo py-2">{{ question.subject }}</h2>
@@ -44,4 +46,6 @@
 
 
 </div>
+
+{% endblock content %}
 
