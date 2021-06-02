@@ -1,3 +1,11 @@
 {
-  "python.pythonPath": "C:\\Users\\hdy20\\.conda\\envs\\mysite\\python.exe"
+  "python.pythonPath": "C:\\Users\\hdy20\\.conda\\envs\\mysite\\python.exe",
+  
+  
+  "[django-html]": {
+
+  },
+  "files.associations": {
+      "*.html": "html"
+  }
 }
