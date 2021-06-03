@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
+    'common.apps.CommonConfig',
+
     'pybo.apps.PyboConfig',
 
     'django.contrib.admin',
@@ -125,3 +127,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
+
+# 로그인/로그아웃 성공후 이동하는 URL
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
