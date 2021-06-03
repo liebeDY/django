@@ -33,6 +33,57 @@
     </tbody>
   </table>
 
+  <!-- 페이징 처리 시작 -->
+  <ul class="pagination justify-content-center">
+
+    <!-- 이전 페이지 -->
+    {% if question_list.has_previous %}
+    <li class="page-itme">
+      <a href="?page={{ question_list.previous_page_number }}" class="page-link">이전</a>
+    </li>
+
+    {% else %}
+    <li class="page-item disabled">
+      <a href="#" tabindex="-1" aria-disabled="true" class="page-link">이전</a>
+    </li>
+    {% endif %}
+
+    <!-- 페이지 리스트 -->
+    {% for page_number in question_list.paginator.page_range  %}
+      {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
+        
+        {% if page_number == question_list.number %}
+        <li class="page-item active" aria-current="page">
+          <a href="?page={{ page_number }}" class="page-link">{{ page_number }}</a>
+        </li>
+
+        {% else %}
+        <li class="page-item">
+          <a href="?page={{ page_number }}" class="page-link">{{ page_number }}</a>
+        </li>
+
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    <!-- 다음 페이지 -->
+    {% if question_list.has_next %}
+    <li class="page-item">
+      <a href="?page={{ question_list.next_page_number }}" class="page-link">다음</a>
+    </li>
+      
+    {% else %}
+    <li class="page-item disabled">
+      <a href="#" tabindex="-1" aria-disabled="true" class="page-link">다음</a>
+    </li>
+    {% endif %}
+        
+      
+    
+
+
+  </ul>
+
   <a href="{% url 'pybo:question_create' %}" class="btn btn-primary">질문 등록하기</a>
 </div>
 
